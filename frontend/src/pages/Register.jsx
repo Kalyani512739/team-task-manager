@@ -8,7 +8,7 @@ function Register() {
   const register = async () => {
     try {
       setLoading(true);
-      await axios.post("http://localhost:5000/api/auth/signup", form);
+      await axios.post("/api/auth/signup", form);
       alert("Signup success");
       window.location.href = "/";
     } catch (err) {

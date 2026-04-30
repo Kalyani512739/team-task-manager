@@ -10,7 +10,7 @@ function Dashboard() {
       try {
         // 1. stats
         const res = await axios.get(
-          "http://localhost:5000/api/tasks/dashboard",
+          "/api/tasks/dashboard",
           {
             headers: {
               Authorization: "Bearer " + localStorage.getItem("token"),

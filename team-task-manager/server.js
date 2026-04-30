@@ -38,3 +38,12 @@ const projectRoutes = require("./routes/projectRoutes");
 app.use("/api/projects", projectRoutes);
 const taskRoutes = require("./routes/taskRoutes");
 app.use("/api/tasks", taskRoutes);
+
+const path = require("path");
+
+// Serve frontend
+app.use(express.static(path.join(__dirname, "public")));
+
+app.get("*", (req, res) => {
+  res.sendFile(path.join(__dirname, "public", "index.html"));
+});
