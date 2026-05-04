@@ -31,7 +31,7 @@ function Tasks() {
     fetchProjects();
   };
 
-  // TASKS
+  
   const fetchTasks = async (pid) => {
     const res = await axios.get(
       `http://localhost:5000/api/tasks?projectId=${pid}`,
@@ -95,7 +95,6 @@ function Tasks() {
           })}
         </div>
 
-        {/* CREATE PROJECT */}
         {view === "cp" && (
           <Panel title="Create Project" subtitle="Group related tasks under a project.">
             <div style={styles.row}>
@@ -112,7 +111,6 @@ function Tasks() {
           </Panel>
         )}
 
-        {/* SELECT PROJECT */}
         {view === "sp" && (
           <Panel title="Select Project" subtitle="Choose a project to load its tasks.">
             <select
@@ -138,7 +136,6 @@ function Tasks() {
           </Panel>
         )}
 
-        {/* CREATE TASK */}
         {view === "ct" && (
           <Panel title="Create Task" subtitle="Add a task to the currently selected project.">
             {!projectId ? (
@@ -161,7 +158,6 @@ function Tasks() {
           </Panel>
         )}
 
-        {/* TASK LIST */}
         {view === "tl" && (
           <Panel title="Task List" subtitle="All tasks for the selected project.">
             {tasks.length === 0 ? (
