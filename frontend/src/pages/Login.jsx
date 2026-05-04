@@ -16,7 +16,7 @@ function Login() {
 
       localStorage.setItem("token", res.data.token);
 
-      // ✅ FIXED: go to dashboard
+      
       window.location.href = "/dashboard";
     } catch (err) {
       alert("Login failed");
